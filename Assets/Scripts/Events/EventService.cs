@@ -18,4 +18,13 @@ public class EventService : MonoBehaviour
             return instance;
         }
     }
+    public static EventController OnItemAdded;
+    public static EventController OnItemRemoved;
+    public static EventController OnItemPurchase;
+    EventService()
+    {
+        OnItemAdded = new EventController();
+        OnItemRemoved = new EventController();
+        OnItemPurchase = new EventController();
+    }
 }

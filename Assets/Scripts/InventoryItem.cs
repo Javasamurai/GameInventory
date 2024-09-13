@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour {
+public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
     private Item item;
     [SerializeField]
     private Image icon;
@@ -21,5 +22,15 @@ public class InventoryItem : MonoBehaviour {
     }
     public void UseItem(){
         Debug.Log("Using " + item.name);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("Pointer Exit");
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Pointer Enter");
     }
 }

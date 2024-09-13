@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - itemType: 0
-    name: 
+    name: Sword
     icon: {fileID: 21300000, guid: 5c494cbc29d1441f99c140522c754c67, type: 3}
     description: 
     buyingPrice: 0
