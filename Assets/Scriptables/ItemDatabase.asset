@@ -18,133 +18,133 @@ MonoBehaviour:
     icon: {fileID: 300058955, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 100
-    value: 0
-    damage: 100
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 2
+    quantity: 0
   - itemType: 2
-    name: 
+    name: Meteor
     icon: {fileID: 872973617, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 2
-    name: Strenght
+    name: Strength
     icon: {fileID: 2055862426, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 2
-  - itemType: 1
-    name: 
+    quantity: 0
+  - itemType: 2
+    name: Bows Attack
     icon: {fileID: 2044206499, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 1
-    name: 
+    name: Hallucinate
     icon: {fileID: -2114031342, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 1
-    name: 
+    name: Common Sword
     icon: {fileID: -877296600, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 1
-    name: 
+    name: Chainsaw
     icon: {fileID: -264464966, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 1
-    name: 
+    name: Crossbow
     icon: {fileID: -236184399, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
-  - itemType: 3
-    name: 
+    quantity: 0
+  - itemType: 4
+    name: Ring
     icon: {fileID: 1235656323, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 3
-    name: 
+    name: Necklace
     icon: {fileID: 1404753934, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 2
     name: 
     icon: {fileID: -1419928959, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 2
     name: 
     icon: {fileID: -1349321282, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 2
     name: 
     icon: {fileID: -709050185, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 0
     name: 
     icon: {fileID: -216310831, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0
   - itemType: 0
     name: 
     icon: {fileID: -2071144930, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
-    value: 0
-    damage: 0
-    armor: 0
+    sellingPrice: 0
+    weight: 0
     rarity: 0
+    quantity: 0

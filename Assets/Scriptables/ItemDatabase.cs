@@ -15,10 +15,10 @@ public class Item
     public Sprite icon;
     public string description;
     public int buyingPrice;
-    public int value;
-    public int damage;
-    public int armor;
+    public int sellingPrice;
+    public int weight;
     public Rarity rarity;
+    public int quantity;
 }
 
 public enum Rarity

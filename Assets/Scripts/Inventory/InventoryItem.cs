@@ -23,7 +23,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         this.item = item;
         icon.sprite = item.icon;
-        itemQuantityText.text = item.name;
+        itemQuantityText.text = item.quantity.ToString();
         this.inventoryType = inventoryType;
     }
 
