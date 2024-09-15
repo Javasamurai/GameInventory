@@ -1,14 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
+public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+{
     private Item item;
     [SerializeField]
     private Image icon;
     [SerializeField]
-    private TMPro.TextMeshProUGUI nameText;
-    
+    private TMPro.TextMeshProUGUI itemQuantityText;
+
     public enum INVENTORY_TYPE
     {
         SHOP,
@@ -21,7 +23,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         this.item = item;
         icon.sprite = item.icon;
-        nameText.text = item.name;
+        itemQuantityText.text = item.name;
         this.inventoryType = inventoryType;
     }
 
@@ -30,7 +32,8 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         return item;
     }
 
-    public void UseItem(){
+    public void UseItem()
+    {
         Debug.Log("Using " + item.name);
     }
 
@@ -42,5 +45,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Pointer Enter");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Pointer Click");
     }
 }

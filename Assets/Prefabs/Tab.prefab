@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: -315228116, guid: 7181bb1ecc2d24de99f7cb4dadc9e1f8, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.52
 --- !u!114 &544551216722627943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -106,10 +106,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -315228116, guid: 7181bb1ecc2d24de99f7cb4dadc9e1f8, type: 3}
+    m_PressedSprite: {fileID: -315228116, guid: 7181bb1ecc2d24de99f7cb4dadc9e1f8, type: 3}
+    m_SelectedSprite: {fileID: -315228116, guid: 7181bb1ecc2d24de99f7cb4dadc9e1f8, type: 3}
+    m_DisabledSprite: {fileID: 1243070367, guid: 7181bb1ecc2d24de99f7cb4dadc9e1f8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3067373037232814773}
   toggleTransition: 1
-  graphic: {fileID: 0}
+  graphic: {fileID: 3067373037232814773}
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
@@ -192,15 +192,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Materials
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f33d72f03ec5f40eeae533febb2e127d, type: 2}
-  m_sharedMaterial: {fileID: 4932651341517173253, guid: f33d72f03ec5f40eeae533febb2e127d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d2f1a6ecbee304501b819afb11ba3010, type: 2}
+  m_sharedMaterial: {fileID: 6148206844756410771, guid: d2f1a6ecbee304501b819afb11ba3010, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4282812357
+  m_fontColor: {r: 0.7725491, g: 0.5294118, b: 0.27450982, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
