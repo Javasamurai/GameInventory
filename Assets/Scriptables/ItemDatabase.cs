@@ -32,6 +32,7 @@ public enum Rarity
 
 public enum ItemType
 {
+    None,
     Material,
     Weapons,
     Consumable,

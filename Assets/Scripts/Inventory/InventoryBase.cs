@@ -8,7 +8,7 @@ public abstract class InventoryBase : MonoBehaviour
     protected GameObject inventoryItemPrefab;
     protected ItemDatabase itemDatabase;
 
-    abstract public void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel);
+    abstract public void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel, ItemType itemType = ItemType.None);
 
     protected InventoryBase(ItemDatabase itemDatabase)
     {

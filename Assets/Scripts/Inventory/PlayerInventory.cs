@@ -10,7 +10,7 @@ public class PlayerInventory : InventoryBase
         this.inventoryView.Init();
     }
 
-    public override void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel)
+    public override void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel, ItemType itemType = ItemType.None)
     {
         
     }
