@@ -8,18 +8,28 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Image icon;
     [SerializeField]
     private TMPro.TextMeshProUGUI nameText;
+    
+    public enum INVENTORY_TYPE
+    {
+        SHOP,
+        PLAYER
+    }
 
-    public void Init(Item item){
+    private INVENTORY_TYPE inventoryType; 
+
+    public void Init(Item item, INVENTORY_TYPE inventoryType)
+    {
         this.item = item;
         icon.sprite = item.icon;
         nameText.text = item.name;
+        this.inventoryType = inventoryType;
     }
-    public void SetItem(Item item){
-        this.item = item;
-    }
-    public Item GetItem(){
+
+    public Item GetItem()
+    {
         return item;
     }
+
     public void UseItem(){
         Debug.Log("Using " + item.name);
     }

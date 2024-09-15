@@ -6,22 +6,27 @@ public abstract class InventoryBase : MonoBehaviour
     protected GameObject inventoryPanel;
     [SerializeField]
     protected GameObject inventoryItemPrefab;
-    [SerializeField]
     protected ItemDatabase itemDatabase;
-    abstract public void AddItem(Item item);
-    abstract public void RemoveItem(Item item);
 
-    private void Awake() {
-        InstantiateItems();
+    abstract public void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel);
+
+    protected InventoryBase(ItemDatabase itemDatabase)
+    {
+        this.itemDatabase = itemDatabase;
     }
 
-    virtual public void InstantiateItems()
+    protected virtual void OnClickItem(Item item)
     {
-        foreach (Item item in itemDatabase.items)
-        {
-            GameObject itemObject = Instantiate(inventoryItemPrefab, transform);
-            itemObject.transform.SetParent(inventoryPanel.transform);
-            itemObject.GetComponent<InventoryItem>().SetItem(item);
-        }
+        Debug.Log("Item clicked: " + item.name);
+    }
+
+    protected virtual void OnPointerEnterItem(Item item)
+    {
+        Debug.Log("Pointer Enter Item: " + item.name);
+    }
+
+    protected virtual void OnPointerExitItem(Item item)
+    {
+        Debug.Log("Pointer Exit Item: " + item.name);
     }
 }

@@ -1,18 +1,15 @@
+using UnityEngine;
+
 class PlayerInventory : InventoryBase
 {
-    public override void AddItem(Item item)
+    private PlayerInventoryView inventoryView;
+    public PlayerInventory(ItemDatabase itemDatabase, PlayerInventoryView playerInventoryView) : base(itemDatabase)
+    {
+        this.inventoryView = playerInventoryView;
+    }
+
+    public override void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel)
     {
         
-    }
-
-    public override void RemoveItem(Item item)
-    {
-        // Remove item from player inventory
-    }
-
-    public override void InstantiateItems()
-    {
-        // Instantiate items in player inventory
-        base.InstantiateItems();        
     }
 }
