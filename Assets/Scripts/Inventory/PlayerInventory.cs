@@ -32,7 +32,7 @@ public class PlayerInventory : InventoryBase
             if (!ownedItemsArray.Contains(item.name)) continue;
             GameObject itemObject = Instantiate(inventoryItem, content);
             InventoryItem inventoryItemComponent = itemObject.GetComponent<InventoryItem>();
-            inventoryItemComponent.Init(item, InventoryItem.INVENTORY_TYPE.PLAYER);
+            inventoryItemComponent.Init(item, INVENTORY_TYPE.PLAYER, this);
             if (ownedItemsArray.Length > 0)
             {
                 foreach (string ownedItem in ownedItemsArray)
@@ -53,12 +53,11 @@ public class PlayerInventory : InventoryBase
         int randomItemIndex = Random.Range(0, itemDatabase.items.Length);
         Item item = itemDatabase.items[randomItemIndex];
         // Keep collecting until we get an item we don't already own
-        if (PlayerWallet.OwnedItems.Contains(item.name))
+        if (PlayerWallet.OwnedItems.Contains(item.name) && PlayerWallet.Instance.CanHold(item))
         {
             GatherItems();
             return;
         }
         PlayerWallet.Instance.AddItem(item);
-        EventService.Instance.OnItemPurchased.Invoke(item);
     }
 }

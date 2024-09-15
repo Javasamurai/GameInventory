@@ -56,15 +56,15 @@ public class PlayerWallet
     {
         return Coins >= cost;
     }
-    public bool CanHold(int weight)
+    public bool CanHold(Item item)
     {
-        return weight <= walletConfig.maxWeight;
+        return item.weight <= walletConfig.maxWeight;
     }
 
     public void PurchaseItem(Item item, int cost)
     {
         if (!CanAfford(cost)) return;
-        if (CanHold(item.weight)) return;
+        if (CanHold(item)) return;
         RemoveCoins(cost);
         AddItem(item);
     }

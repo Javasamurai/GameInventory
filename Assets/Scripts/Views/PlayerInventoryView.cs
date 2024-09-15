@@ -31,5 +31,6 @@ public class PlayerInventoryView : MonoBehaviour
     private void OnDestroy()
     {
         EventService.Instance.OnItemPurchased.RemoveListener(OnItemPurchased);
+        gatherButton.onClick.RemoveAllListeners();
     }
 }

@@ -23,12 +23,7 @@ class ShopInventory : InventoryBase
         {
             if (itemType != ItemType.None && item.itemType != itemType) continue;
             GameObject itemObject = Instantiate(inventoryItem, content);
-            itemObject.GetComponent<InventoryItem>().Init(item, InventoryItem.INVENTORY_TYPE.SHOP);
+            itemObject.GetComponent<InventoryItem>().Init(item, INVENTORY_TYPE.SHOP, this);
         }
-    }
-
-    protected override void OnClickItem(Item item)
-    {
-        Debug.Log("Item clicked: " + item.name);
     }
 }

@@ -24,7 +24,6 @@ public class TabView : MonoBehaviour
             toggle.onValueChanged.AddListener(isOn => {
                 var currentItemType = itemType; 
                 if (isOn) {
-                    Debug.Log("Tab button clicked: " + itemType);
                     // Render items based on itemType
                     shopView.RefreshItems(currentItemType);
                 }

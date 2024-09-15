@@ -148,3 +148,4 @@ MonoBehaviour:
     weight: 0
     rarity: 0
     quantity: 0
+  itemPreviewPrefab: {fileID: 7077475439903990233, guid: 6eba4c8187c4d4c97b82d3da97bc1532, type: 3}

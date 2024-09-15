@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemDatabase : ScriptableObject
 {
     public Item[] items;
+    public InventoryItemPreview itemPreviewPrefab;
 }
 
 
