@@ -11,7 +11,8 @@ class AudioService : MonoBehaviour
     private Sound[] sounds;
     private void Awake()
     {
-        EventService.Instance.OnItemPurchased.AddListener(PlayPurchaseSound);        
+        EventService.Instance.OnItemPurchased.AddListener(PlayPurchaseSound);     
+        EventService.Instance.OnItemSold.AddListener(PlayPurchaseSound);   
     }
 
     private void PlayPurchaseSound(Item item)

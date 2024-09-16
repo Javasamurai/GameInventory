@@ -26,17 +26,17 @@ MonoBehaviour:
     name: Meteor
     icon: {fileID: 872973617, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
+    buyingPrice: 100
+    sellingPrice: 100
+    weight: 10
     rarity: 0
     quantity: 0
   - itemType: 2
     name: Strength
     icon: {fileID: 2055862426, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 2
     quantity: 0
@@ -44,8 +44,8 @@ MonoBehaviour:
     name: Bows Attack
     icon: {fileID: 2044206499, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 0
     quantity: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     name: Hallucinate
     icon: {fileID: -2114031342, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 0
     quantity: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     name: Common Sword
     icon: {fileID: -877296600, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 0
     quantity: 0
@@ -71,8 +71,8 @@ MonoBehaviour:
     name: Chainsaw
     icon: {fileID: -264464966, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 0
     quantity: 0
@@ -80,8 +80,8 @@ MonoBehaviour:
     name: Crossbow
     icon: {fileID: -236184399, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
-    buyingPrice: 0
-    sellingPrice: 0
+    buyingPrice: 100
+    sellingPrice: 100
     weight: 0
     rarity: 0
     quantity: 0

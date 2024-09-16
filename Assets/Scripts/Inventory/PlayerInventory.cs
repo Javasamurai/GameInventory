@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerInventory : InventoryBase
 {
     private const string OWNEDITEMSKEY = "ownedItems";
-    private const string COINSKEY = "Coins";
-    public static int Coins => PlayerPrefs.GetInt(COINSKEY, 0);
 
     public int walletWeight {
         get {
@@ -42,23 +40,17 @@ public class PlayerInventory : InventoryBase
         }
 
         SavedItem[] ownedItemsArray = PlayerWallet.OwnedItems;
-        foreach (Item item in itemDatabase.items)
+
+        for (int i = 0; i < ownedItemsArray.Length; i++)
         {
-            SavedItem currentItem = ownedItemsArray.FirstOrDefault(i => i.itemName == item.name);
-            if (ownedItemsArray.Length > 0)
+            SavedItem currentItem = ownedItemsArray[i];
+            Item item = itemDatabase.items.FirstOrDefault(i => i.name == currentItem.itemName);
+            if (item != null)
             {
-                if (!ownedItemsArray.Any(i => i.itemName == item.name))
-                {
-                    continue;
-                }
+                GameObject itemObject = GameObject.Instantiate(inventoryItem, content);
+                InventoryItem inventoryItemComponent = itemObject.GetComponent<InventoryItem>();
+                inventoryItemComponent.Init(item, currentItem.quantity, INVENTORY_TYPE.PLAYER, this);
             }
-            else
-            {
-                break;
-            }
-            GameObject itemObject = GameObject.Instantiate(inventoryItem, content);
-            InventoryItem inventoryItemComponent = itemObject.GetComponent<InventoryItem>();
-            inventoryItemComponent.Init(item, currentItem.quantity, INVENTORY_TYPE.PLAYER, this);
         }
     }
 

@@ -69,7 +69,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Pointer Click Item: " + item.name);
         if (inventoryType == INVENTORY_TYPE.SHOP)
         {
             inventoryBase.BuyItem(item);

@@ -193,7 +193,7 @@ MonoBehaviour:
   audioSource: {fileID: 19134794}
   sounds:
   - soundType: 0
-    clip: {fileID: 8300000, guid: 2d4e9c0ebe24744c7a01507c723c72dd, type: 3}
+    clip: {fileID: 8300000, guid: 7e540010a64764ce8a62a06f90eddd08, type: 3}
 --- !u!82 &19134794
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1871,7 +1871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1295320779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1904,8 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c898218fe90c54422a21a0df030d8908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purchaseItemPopup: {fileID: 0}
-  sellItemPopup: {fileID: 0}
+  buySellPopup: {fileID: 2111105684}
 --- !u!1 &1466644309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,13 +2822,14 @@ GameObject:
   - component: {fileID: 2111105681}
   - component: {fileID: 2111105683}
   - component: {fileID: 2111105682}
+  - component: {fileID: 2111105684}
   m_Layer: 5
   m_Name: PurchaseItemPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2111105681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0.48235294}
+  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0.70980394}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2888,6 +2888,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111105680}
   m_CullTransparentMesh: 1
+--- !u!114 &2111105684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111105680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5533eae3906c1472ba0a7971c93cbfd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoText: {fileID: 2046801825}
+  buySellButton: {fileID: 1573429529}
+  closeButton: {fileID: 314263874}
 --- !u!1 &2143621571
 GameObject:
   m_ObjectHideFlags: 0

@@ -87,7 +87,7 @@ public class PlayerWallet
             {
                 savedItems = savedItems.Where(i => i.itemName != item.name).ToArray();
             }
-            PlayerPrefs.SetString(OWNEDITEMSKEY, JsonUtility.ToJson(savedItems));
+            PlayerPrefs.SetString(OWNEDITEMSKEY, JsonConvert.SerializeObject(savedItems));
             currentWalletWeight -= item.weight * quantity;
         }
     }

@@ -17,7 +17,8 @@ public class PlayerInventoryView : MonoBehaviour
 
     public void Init()
     {
-        EventService.Instance.OnItemPurchased.AddListener(OnItemPurchased);
+        EventService.Instance.OnItemPurchased.AddListener(UpdateItems);
+        EventService.Instance.OnItemSold.AddListener(UpdateItems);
         gatherButton.onClick.AddListener(() => GatherItems());
         playerInventory.SpawnItems(content, inventoryItem.gameObject, gameObject);
     }
@@ -38,15 +39,15 @@ public class PlayerInventoryView : MonoBehaviour
         playerInventory.SpawnItems(content, inventoryItem.gameObject, gameObject);
     }
 
-    public void OnItemPurchased(Item item)
+    public void UpdateItems(Item item)
     {
-        PlayerWallet.Instance.AddItem(item);
         playerInventory.SpawnItems(content, inventoryItem.gameObject, gameObject);
     }
 
     private void OnDestroy()
     {
-        EventService.Instance.OnItemPurchased.RemoveListener(OnItemPurchased);
+        EventService.Instance.OnItemPurchased.RemoveListener(UpdateItems);
+        EventService.Instance.OnItemSold.RemoveListener(UpdateItems);
         gatherButton.onClick.RemoveAllListeners();
     }
 }
