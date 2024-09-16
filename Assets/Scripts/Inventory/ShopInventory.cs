@@ -16,14 +16,14 @@ class ShopInventory : InventoryBase
         {
             foreach (Transform child in content)
             {
-                Destroy(child.gameObject);
+                GameObject.Destroy(child.gameObject);
             }
         }
         foreach (Item item in itemDatabase.items)
         {
             if (itemType != ItemType.None && item.itemType != itemType) continue;
-            GameObject itemObject = Instantiate(inventoryItem, content);
-            itemObject.GetComponent<InventoryItem>().Init(item, INVENTORY_TYPE.SHOP, this);
+            GameObject itemObject = GameObject.Instantiate(inventoryItem, content);
+            itemObject.GetComponent<InventoryItem>().Init(item, item.quantity, INVENTORY_TYPE.SHOP, this);
         }
     }
 }

@@ -1,12 +1,24 @@
+using System;
 using System.Linq;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class PlayerWallet
 {
+
     private const string OWNEDITEMSKEY = "ownedItems";
     private const string COINSKEY = "Coins";
     public static int Coins => PlayerPrefs.GetInt(COINSKEY, 0);
-    public static string[] OwnedItems => PlayerPrefs.GetString(OWNEDITEMSKEY, "")?.Split(',');
+
+    private static int currentWalletWeight = 0;
+    public static SavedItem[] OwnedItems {
+        get {
+            string ownedItems = PlayerPrefs.GetString(OWNEDITEMSKEY, "");
+            SavedItem[] savedItems = JsonConvert.DeserializeObject<SavedItem[]>(ownedItems);
+            if (savedItems == null) return new SavedItem[0];
+            return savedItems;
+        }
+    }
 
     public static PlayerWallet Instance { get; private set; }
 
@@ -33,23 +45,51 @@ public class PlayerWallet
         PlayerPrefs.Save();
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, int quantity = 1)
     {
-        string ownedItems = PlayerPrefs.GetString(OWNEDITEMSKEY, "");
-        if (!OwnsItem(item.name))
+        SavedItem[] savedItems = OwnedItems;
+        if (CanHold(item))
         {
-            ownedItems += item.name + ",";
-            PlayerPrefs.SetString(OWNEDITEMSKEY, ownedItems);
-            PlayerPrefs.Save();
+            if (savedItems == null || savedItems.Length == 0)
+            {
+                savedItems = new SavedItem[] { new SavedItem { itemName = item.name, quantity = quantity } };
+            }
+            else if (savedItems.Any(i => i.itemName == item.name))
+            {
+                savedItems.First(i => i.itemName == item.name).quantity += quantity;
+            }
+            else
+            {
+                SavedItem[] newItems = new SavedItem[savedItems.Length + 1];
+                savedItems.CopyTo(newItems, 0);
+                newItems[savedItems.Length] = new SavedItem { itemName = item.name, quantity = quantity };
+                savedItems = newItems;
+            }
+            // Convert the array to a JSON string and save it to the Persistent Data Path
+            string json = JsonConvert.SerializeObject(savedItems);
+            PlayerPrefs.SetString(OWNEDITEMSKEY, json);
+            currentWalletWeight += item.weight * quantity;
         }
     }
 
-    public void RemoveItem(string itemName)
+    public void RemoveItem(Item item, int quantity)
     {
         string ownedItems = PlayerPrefs.GetString(OWNEDITEMSKEY, "");
-        ownedItems = ownedItems.Replace(itemName + ",", "");
-        PlayerPrefs.SetString(OWNEDITEMSKEY, ownedItems);
-        PlayerPrefs.Save();
+        SavedItem[] savedItems = JsonConvert.DeserializeObject<SavedItem[]>(ownedItems);
+        if (savedItems.Any(i => i.itemName == item.name))
+        {
+            SavedItem savedItem = savedItems.First(i => i.itemName == item.name);
+            if (item.quantity > 1)
+            {
+                item.quantity-= quantity;
+            }
+            else
+            {
+                savedItems = savedItems.Where(i => i.itemName != item.name).ToArray();
+            }
+            PlayerPrefs.SetString(OWNEDITEMSKEY, JsonUtility.ToJson(savedItems));
+            currentWalletWeight -= item.weight * quantity;
+        }
     }
 
     public bool CanAfford(int cost)
@@ -71,6 +111,13 @@ public class PlayerWallet
 
     public static bool OwnsItem(string itemName)
     {
-        return OwnedItems.Contains(itemName);
+        return OwnedItems.FirstOrDefault(i => i.itemName == itemName) != null;
     }
+}
+
+[Serializable]
+public class SavedItem
+{
+    public string itemName;
+    public int quantity;
 }

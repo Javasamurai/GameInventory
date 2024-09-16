@@ -16,12 +16,12 @@ MonoBehaviour:
   - itemType: 2
     name: Death
     icon: {fileID: 300058955, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: The end of everything
     buyingPrice: 100
-    sellingPrice: 0
-    weight: 0
+    sellingPrice: 100
+    weight: 4
     rarity: 2
-    quantity: 0
+    quantity: 1
   - itemType: 2
     name: Meteor
     icon: {fileID: 872973617, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
     weight: 0
     rarity: 2
     quantity: 0
-  - itemType: 2
+  - itemType: 3
     name: Bows Attack
     icon: {fileID: 2044206499, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
@@ -103,8 +103,8 @@ MonoBehaviour:
     weight: 0
     rarity: 0
     quantity: 0
-  - itemType: 2
-    name: 
+  - itemType: 3
+    name: Potion
     icon: {fileID: -1419928959, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
     rarity: 0
     quantity: 0
   - itemType: 2
-    name: 
+    name: Magic Potion
     icon: {fileID: -1349321282, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     rarity: 0
     quantity: 0
   - itemType: 2
-    name: 
+    name: Chicken bone
     icon: {fileID: -709050185, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
     weight: 0
     rarity: 0
     quantity: 0
-  - itemType: 0
-    name: 
+  - itemType: 1
+    name: Gold
     icon: {fileID: -216310831, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
     weight: 0
     rarity: 0
     quantity: 0
-  - itemType: 0
-    name: 
+  - itemType: 1
+    name: Ore
     icon: {fileID: -2071144930, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
     description: 
     buyingPrice: 0

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public abstract class InventoryBase : MonoBehaviour
+public abstract class InventoryBase
 {
     [SerializeField]
     protected GameObject inventoryItemPrefab;
@@ -11,12 +10,12 @@ public abstract class InventoryBase : MonoBehaviour
 
     public void BuyItem(Item item)
     {
-        
+        // Show popup
     }
 
     public void SellItem(Item item)
     {
-
+        // Show popup
     }
 
     protected InventoryBase(ItemDatabase itemDatabase)

@@ -18,7 +18,23 @@ public class PlayerInventoryView : MonoBehaviour
     public void Init()
     {
         EventService.Instance.OnItemPurchased.AddListener(OnItemPurchased);
-        gatherButton.onClick.AddListener(() => playerInventory.GatherItems());
+        gatherButton.onClick.AddListener(() => GatherItems());
+        playerInventory.SpawnItems(content, inventoryItem.gameObject, gameObject);
+    }
+
+    private void GatherItems()
+    {
+        playerInventory.GatherItems();
+        Item dummyItem = new Item { name = "Dummy", weight = 1 };
+
+        if (PlayerWallet.Instance.CanHold(dummyItem))
+        {
+            gatherButton.interactable = true;
+        }
+        else
+        {
+            gatherButton.interactable = false;
+        }
         playerInventory.SpawnItems(content, inventoryItem.gameObject, gameObject);
     }
 

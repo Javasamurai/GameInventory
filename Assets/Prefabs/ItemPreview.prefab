@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1947071266858423643}
   - component: {fileID: 785489215462062948}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: DescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Item Description
+  m_text: The death of everything
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d2f1a6ecbee304501b819afb11ba3010, type: 2}
   m_sharedMaterial: {fileID: 6148206844756410771, guid: d2f1a6ecbee304501b819afb11ba3010, type: 2}
@@ -301,10 +301,10 @@ RectTransform:
   m_Children:
   - {fileID: 9182273725606226243}
   - {fileID: 7694810996745953858}
+  - {fileID: 8824702478191897277}
   - {fileID: 9024819025681194954}
   - {fileID: 2022959523639551003}
   - {fileID: 2112745480260221469}
-  - {fileID: 8824702478191897277}
   - {fileID: 6037282724443038026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   icon: {fileID: 6160259966778780496}
   itemNameText: {fileID: 4336762447255837303}
   itemDescriptionText: {fileID: 785489215462062948}
-  itemPriceText: {fileID: 785489215462062948}
+  itemPriceText: {fileID: 8542178546669293311}
   buySellText: {fileID: 1767555020033651270}
 --- !u!1 &3252549402315898150
 GameObject:

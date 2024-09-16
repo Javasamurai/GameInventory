@@ -6,7 +6,22 @@ public class PlayerInventory : InventoryBase
     private const string OWNEDITEMSKEY = "ownedItems";
     private const string COINSKEY = "Coins";
     public static int Coins => PlayerPrefs.GetInt(COINSKEY, 0);
-    public static string[] OwnedItems => PlayerPrefs.GetString(OWNEDITEMSKEY, "").Split(',');
+
+    public int walletWeight {
+        get {
+            SavedItem[] savedItems = PlayerWallet.OwnedItems;
+            int weight = 0;
+            foreach (SavedItem item in savedItems)
+            {
+                Item itemData = itemDatabase.items.FirstOrDefault(i => i.name == item.itemName);
+                if (itemData != null)
+                {
+                    weight += itemData.weight * item.quantity;
+                }
+            }
+            return weight;
+        }
+    } 
 
     private PlayerInventoryView inventoryView;
     public PlayerInventory(ItemDatabase itemDatabase, PlayerInventoryView playerInventoryView) : base(itemDatabase)
@@ -22,28 +37,28 @@ public class PlayerInventory : InventoryBase
         {
             foreach (Transform child in content)
             {
-                Destroy(child.gameObject);
+                GameObject.Destroy(child.gameObject);
             }
         }
 
-        string[] ownedItemsArray = PlayerWallet.OwnedItems;
+        SavedItem[] ownedItemsArray = PlayerWallet.OwnedItems;
         foreach (Item item in itemDatabase.items)
         {
-            if (!ownedItemsArray.Contains(item.name)) continue;
-            GameObject itemObject = Instantiate(inventoryItem, content);
-            InventoryItem inventoryItemComponent = itemObject.GetComponent<InventoryItem>();
-            inventoryItemComponent.Init(item, INVENTORY_TYPE.PLAYER, this);
+            SavedItem currentItem = ownedItemsArray.FirstOrDefault(i => i.itemName == item.name);
             if (ownedItemsArray.Length > 0)
             {
-                foreach (string ownedItem in ownedItemsArray)
+                if (!ownedItemsArray.Any(i => i.itemName == item.name))
                 {
-                    if (ownedItem == item.name)
-                    {
-                        inventoryItemComponent.gameObject.SetActive(true);
-                        break;
-                    }
+                    continue;
                 }
             }
+            else
+            {
+                break;
+            }
+            GameObject itemObject = GameObject.Instantiate(inventoryItem, content);
+            InventoryItem inventoryItemComponent = itemObject.GetComponent<InventoryItem>();
+            inventoryItemComponent.Init(item, currentItem.quantity, INVENTORY_TYPE.PLAYER, this);
         }
     }
 
@@ -52,8 +67,8 @@ public class PlayerInventory : InventoryBase
         // Collect random items
         int randomItemIndex = Random.Range(0, itemDatabase.items.Length);
         Item item = itemDatabase.items[randomItemIndex];
-        // Keep collecting until we get an item we don't already own
-        if (PlayerWallet.OwnedItems.Contains(item.name) && PlayerWallet.Instance.CanHold(item))
+        
+        if (!PlayerWallet.Instance.CanHold(item))
         {
             GatherItems();
             return;

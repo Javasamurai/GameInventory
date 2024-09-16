@@ -26,11 +26,11 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private INVENTORY_TYPE inventoryType; 
 
-    public void Init(Item item, INVENTORY_TYPE inventoryType, InventoryBase inventoryBase)
+    public void Init(Item item, int quantity, INVENTORY_TYPE inventoryType, InventoryBase inventoryBase)
     {
         this.item = item;
         icon.sprite = item.icon;
-        itemQuantityText.text = item.quantity.ToString();
+        itemQuantityText.text = quantity.ToString();
         this.inventoryType = inventoryType;
         this.inventoryBase = inventoryBase;
     }
@@ -50,7 +50,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Pointer Enter Item: " + item.name);
         if (inventoryItemPreview != null)
         {
             Destroy(inventoryItemPreview.gameObject);
@@ -62,8 +61,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Pointer Exit Item: " + item.name);
-
         if (inventoryItemPreview != null)
         {
             Destroy(inventoryItemPreview.gameObject);

@@ -960,59 +960,17 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 96
-        width: 32
+        width: 96
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 9, z: 11, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: ad05efa89ef654528af7e06d09200017
       internalID: -1838283333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilemap_packed_40
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfdb0ca9518df45028769c65615046c9
-      internalID: -708213450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilemap_packed_41
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43dbc096d6ca64d438079c1cf35553c7
-      internalID: 1218391681
       vertices: []
       indices: 
       edges: []
