@@ -7,7 +7,7 @@ public class PlayerWallet
 {
     private const string OWNEDITEMSKEY = "ownedItems";
     private const string COINSKEY = "Coins";
-    public static int Coins => PlayerPrefs.GetInt(COINSKEY, 0);
+    public static float Coins => PlayerPrefs.GetFloat(COINSKEY, 0);
 
     public int currentWalletWeight = 0;
     public static SavedItem[] OwnedItems
@@ -36,13 +36,13 @@ public class PlayerWallet
 
     public void AddCoins(int amount)
     {
-        PlayerPrefs.SetInt(COINSKEY, Coins + amount);
+        PlayerPrefs.SetFloat(COINSKEY, Coins + amount);
         PlayerPrefs.Save();
     }
 
-    public void RemoveCoins(int amount)
+    public void RemoveCoins(float amount)
     {
-        PlayerPrefs.SetInt(COINSKEY, Coins - amount);
+        PlayerPrefs.SetFloat(COINSKEY, Coins - amount);
         PlayerPrefs.Save();
     }
 
@@ -93,18 +93,18 @@ public class PlayerWallet
         }
     }
 
-    public bool CanAfford(int cost)
+    public bool CanAfford(Item item, int quantity = 1)
     {
-        return Coins >= cost;
+        return Coins >= item.buyingPrice * quantity;
     }
-    public bool CanHold(Item item)
+    public bool CanHold(Item item, int quantity = 1)
     {
-        return item.weight <= walletConfig.maxWeight;
+        return currentWalletWeight + (item.weight * quantity) <= walletConfig.maxWeight;
     }
 
     public void PurchaseItem(Item item, int cost)
     {
-        if (!CanAfford(cost)) return;
+        if (!CanAfford(item, 1)) return;
         if (CanHold(item)) return;
         RemoveCoins(cost);
         AddItem(item);

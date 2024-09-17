@@ -43,6 +43,7 @@ public class PlayerInventory : InventoryBase
         {
             SavedItem currentItem = ownedItemsArray[i];
             Item item = itemDatabase.items.FirstOrDefault(i => i.name == currentItem.itemName);
+
             if (item != null)
             {
                 GameObject itemObject = GameObject.Instantiate(inventoryItem, content);

@@ -25,75 +25,75 @@ MonoBehaviour:
   - itemType: 2
     name: Meteor
     icon: {fileID: 872973617, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Does short damage and burns
     buyingPrice: 100
     sellingPrice: 100
-    weight: 10
-    rarity: 0
-    quantity: 0
+    weight: 3
+    rarity: 2
+    quantity: 1
   - itemType: 2
     name: Strength
     icon: {fileID: 2055862426, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Gives enormous vigor and stregth
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
+    weight: 3
     rarity: 2
-    quantity: 0
+    quantity: 1
   - itemType: 3
     name: Bows Attack
     icon: {fileID: 2044206499, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Does multiple attacks with bows
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
+    weight: 5
     rarity: 0
-    quantity: 0
+    quantity: 1
   - itemType: 1
     name: Hallucinate
     icon: {fileID: -2114031342, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Freezes enemies units for few seconds
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
-    rarity: 0
-    quantity: 0
+    weight: 10
+    rarity: 4
+    quantity: 1
   - itemType: 1
     name: Common Sword
     icon: {fileID: -877296600, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Metal sword
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
-    rarity: 0
-    quantity: 0
+    weight: 10
+    rarity: 2
+    quantity: 1
   - itemType: 1
-    name: Chainsaw
+    name: Axe
     icon: {fileID: -264464966, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: 'Rotating axe, short range but big damage '
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
-    rarity: 0
+    weight: 15
+    rarity: 1
     quantity: 0
   - itemType: 1
     name: Crossbow
     icon: {fileID: -236184399, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
+    description: Fires of bows in short time
     buyingPrice: 100
     sellingPrice: 100
-    weight: 0
-    rarity: 0
-    quantity: 0
+    weight: 20
+    rarity: 4
+    quantity: 5
   - itemType: 4
     name: Ring
     icon: {fileID: 1235656323, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
-    rarity: 0
-    quantity: 0
+    description: Powerful magic ring
+    buyingPrice: 300
+    sellingPrice: 300
+    weight: 1
+    rarity: 4
+    quantity: 1
   - itemType: 3
     name: Necklace
     icon: {fileID: 1404753934, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
@@ -102,7 +102,7 @@ MonoBehaviour:
     sellingPrice: 0
     weight: 0
     rarity: 0
-    quantity: 0
+    quantity: 5
   - itemType: 3
     name: Potion
     icon: {fileID: -1419928959, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
@@ -111,41 +111,50 @@ MonoBehaviour:
     sellingPrice: 0
     weight: 0
     rarity: 0
-    quantity: 0
+    quantity: 10
   - itemType: 2
     name: Magic Potion
     icon: {fileID: -1349321282, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
-    rarity: 0
-    quantity: 0
+    description: Magic potion1
+    buyingPrice: 140
+    sellingPrice: 100
+    weight: 5
+    rarity: 2
+    quantity: 10
   - itemType: 2
     name: Chicken bone
     icon: {fileID: -709050185, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
+    description: Immediate health regeration
+    buyingPrice: 40
+    sellingPrice: 40
+    weight: 4
     rarity: 0
-    quantity: 0
+    quantity: 20
   - itemType: 1
     name: Gold
     icon: {fileID: -216310831, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
+    description: Pure gold
+    buyingPrice: 200
+    sellingPrice: 200
+    weight: 10
     rarity: 0
-    quantity: 0
+    quantity: 10
   - itemType: 1
     name: Ore
     icon: {fileID: -2071144930, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
-    description: 
-    buyingPrice: 0
-    sellingPrice: 0
-    weight: 0
-    rarity: 0
-    quantity: 0
+    description: Pure magical ore
+    buyingPrice: 240
+    sellingPrice: 240
+    weight: 10
+    rarity: 3
+    quantity: 10
+  - itemType: 4
+    name: Chest
+    icon: {fileID: -528768296, guid: 45c889c611c594a76b16b479d3f5219a, type: 3}
+    description: Chest with gold and gems
+    buyingPrice: 1000
+    sellingPrice: 1000
+    weight: 30
+    rarity: 4
+    quantity: 1
   itemPreviewPrefab: {fileID: 7077475439903990233, guid: 6eba4c8187c4d4c97b82d3da97bc1532, type: 3}

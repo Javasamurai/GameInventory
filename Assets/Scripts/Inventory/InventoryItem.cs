@@ -18,17 +18,16 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Image icon;
     [SerializeField]
     private TMPro.TextMeshProUGUI itemQuantityText;
-
     private InventoryBase inventoryBase;
-
-    
-
     private INVENTORY_TYPE inventoryType; 
+
+    private int quantity;
 
     public void Init(Item item, int quantity, INVENTORY_TYPE inventoryType, InventoryBase inventoryBase)
     {
         this.item = item;
         icon.sprite = item.icon;
+        this.quantity = quantity;
         itemQuantityText.text = quantity.ToString();
         this.inventoryType = inventoryType;
         this.inventoryBase = inventoryBase;
@@ -70,11 +69,11 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (inventoryType == INVENTORY_TYPE.SHOP)
         {
-            inventoryBase.BuyItem(item);
+            inventoryBase.BuyItem(item, quantity);
         }
         else
         {
-            inventoryBase.SellItem(item);
+            inventoryBase.SellItem(item, quantity);
         }
     }
 }

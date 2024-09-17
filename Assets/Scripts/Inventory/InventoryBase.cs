@@ -6,16 +6,16 @@ public abstract class InventoryBase
 
     abstract public void SpawnItems(Transform content, GameObject inventoryItem, GameObject inventoryPanel, ItemType itemType = ItemType.None);
 
-    public void BuyItem(Item item)
+    public void BuyItem(Item item, int maxQuantity)
     {
         // Show popup
-        PopupManager.Instance.ShowBuySellPopup(item, 1, INVENTORY_TYPE.SHOP);
+        PopupManager.Instance.ShowBuySellPopup(item, maxQuantity, INVENTORY_TYPE.SHOP);
     }
 
-    public void SellItem(Item item)
+    public void SellItem(Item item, int maxQuantity)
     {
         // Show popup
-        PopupManager.Instance.ShowBuySellPopup(item, 1, INVENTORY_TYPE.PLAYER);
+        PopupManager.Instance.ShowBuySellPopup(item, maxQuantity, INVENTORY_TYPE.PLAYER);
     }
 
     protected InventoryBase(ItemDatabase itemDatabase)
