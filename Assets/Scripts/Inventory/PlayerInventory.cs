@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerInventory : InventoryBase
 {
-    private const string OWNEDITEMSKEY = "ownedItems";
-
     public int walletWeight {
         get {
             SavedItem[] savedItems = PlayerWallet.OwnedItems;

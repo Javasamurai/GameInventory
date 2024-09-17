@@ -6,7 +6,8 @@ public class PopupManager : GenericMonoSingleton<PopupManager>
 {
     [SerializeField] private BuySellPopup buySellPopup;
 
-    protected override void Awake() {
+    protected override void Awake()
+    {
         base.Awake();
         buySellPopup.gameObject.SetActive(false);
     }

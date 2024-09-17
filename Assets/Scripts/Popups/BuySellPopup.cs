@@ -6,16 +6,26 @@ public class BuySellPopup : MonoBehaviour {
     [SerializeField] private TMPro.TextMeshProUGUI infoText;
     [SerializeField] private Button buySellButton;
     [SerializeField] private Button closeButton;
+    [SerializeField]
 
     private Item item;
     private INVENTORY_TYPE inventoryType;
 
-    public void Init(Item item, int quantity, INVENTORY_TYPE inventoryType) {
+    public void Init(Item item, int quantity, INVENTORY_TYPE inventoryType)
+    {
         this.item = item;
         this.inventoryType = inventoryType;
-        string action = inventoryType == INVENTORY_TYPE.SHOP ? "Buy" : "Sell";
-        infoText.text = "Do you want to" + action + " " + quantity + " " + item.name + " for " + item.buyingPrice * quantity + " coins?";
+        string action = inventoryType == INVENTORY_TYPE.SHOP ? "buy" : "sell";
+        infoText.text = "Do you want to " + action + " " + quantity + " " + item.name + " for " + item.buyingPrice * quantity + " coins?";
         gameObject.SetActive(true);
+        if (item.buyingPrice * quantity > PlayerWallet.Coins && inventoryType == INVENTORY_TYPE.SHOP)
+        {
+            buySellButton.interactable = false;
+        }
+        else if (inventoryType == INVENTORY_TYPE.PLAYER)
+        {
+            buySellButton.interactable = true;
+        }
         buySellButton.onClick.AddListener(OnBuySellButtonClicked);
         closeButton.onClick.AddListener(OnCloseButtonClicked);
     }

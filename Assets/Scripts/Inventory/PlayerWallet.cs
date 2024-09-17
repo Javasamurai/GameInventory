@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class PlayerWallet
 {
-
     private const string OWNEDITEMSKEY = "ownedItems";
     private const string COINSKEY = "Coins";
     public static int Coins => PlayerPrefs.GetInt(COINSKEY, 0);
 
-    private static int currentWalletWeight = 0;
-    public static SavedItem[] OwnedItems {
-        get {
+    public int currentWalletWeight = 0;
+    public static SavedItem[] OwnedItems
+    {
+        get
+        {
             string ownedItems = PlayerPrefs.GetString(OWNEDITEMSKEY, "");
             SavedItem[] savedItems = JsonConvert.DeserializeObject<SavedItem[]>(ownedItems);
             if (savedItems == null) return new SavedItem[0];
